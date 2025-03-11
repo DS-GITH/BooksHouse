@@ -17,3 +17,9 @@ Database: PostgreSQL
 ✔️ Administrators can add new books to the system
 
 *Feel free to contribute and improve this project! 🚀*
+
+**👤 Contributors**
+
+IgorFariasValentim: **Back-End**
+
+DS-GITH: **Front-End**
