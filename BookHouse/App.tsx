@@ -1,4 +1,5 @@
 import React from "react";
+import './gesture-handler';
 import { SafeAreaView, StatusBar } from "react-native";
 import { BookList } from "./src/components/Revisar/BookList";
 import { Navbar } from "./src/components/Revisar/Navbar";
