@@ -1,15 +1,15 @@
 import React from "react";
 import { SafeAreaView, StatusBar } from "react-native";
 import  Login  from "./src/pages/Login/Login";
-import routes from "./src/routes/index.routes";
+import Routes from "./src/routes/index.routes";
+import { NavigationContainer } from "@react-navigation/native";
 
 export default function App() {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <StatusBar barStyle="dark-content" backgroundColor="transparent" translucent />
+   <NavigationContainer>
 
-      <Login />
-      
-    </SafeAreaView>
-  );
+      <Routes />
+    
+   </NavigationContainer>
+  )
 }
