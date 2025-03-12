@@ -1,9 +1,9 @@
 import React from "react";
 import { Text, View, Image, TouchableOpacity, StyleSheet, Dimensions, Alert } from "react-native";
-import Logo from "../assets/LogoLogin/Logo.png";
+import Logo from "../../assets/LogoLogin/Logo.png";
 import { LinearGradient } from "expo-linear-gradient";
 import { BlurView } from 'expo-blur';
-import { CustomInput } from '../components/input/index'; // Importe o componente CustomInput
+import { CustomInput } from '../../components/input/index'; // Importe o componente CustomInput
 
 export default function Login() {
     const [email, setEmail] = React.useState("");

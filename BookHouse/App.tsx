@@ -1,10 +1,7 @@
 import React from "react";
-import './gesture-handler';
 import { SafeAreaView, StatusBar } from "react-native";
-import { BookList } from "./src/components/Revisar/BookList";
-import { Navbar } from "./src/components/Revisar/Navbar";
-import { MenuOpen } from "./src/components/Revisar/MenuOpen";
-import  Login  from "./src/pages/Login";
+import  Login  from "./src/pages/Login/Login";
+import routes from "./src/routes/index.routes";
 
 export default function App() {
   return (
