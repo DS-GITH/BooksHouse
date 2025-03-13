@@ -4,19 +4,29 @@ import Logo from "../../assets/LogoLogin/Logo.png";
 import { LinearGradient } from "expo-linear-gradient";
 import { BlurView } from 'expo-blur';
 import { CustomInput } from '../../components/input/index'; // Importe o componente CustomInput
+import { useNavigation, NavigationProp, NavigationContainerProps } from "@react-navigation/native";
+import BottomRoutes from "../../routes/bottom.routes";
 
 export default function Login() {
+
+    const navigation = useNavigation<NavigationProp<any>>();
+
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
 
-    function GetLogin() {
+    async function GetLogin() {
         try {
+            console.log("Email:", email, "Password:", password); // Depuração
             if (!email || !password) {
-                return Alert.alert("ALERTA!", "Preencha todos os campos para continuar!");
+                
+                console.log("Campos vazios!"); // Substitui o Alert.alert
+                return;
             }
-            Alert.alert("Logado com sucesso!")
+            navigation.navigate("BottomRoutes");
+            console.log("Logado com sucesso!"); // Substitui o Alert.alert
         } catch (error) {
-            console.log("rapaz, deu algo errado no login ai")
+            
+            console.log("Rapaz, deu algo errado no login aí:", error);
         }
     }
 
