@@ -1,10 +1,12 @@
 import react from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { BookBox } from '../../components/Revisar/BookBox';
+import { BookList } from '../../components/Revisar/BookList';
 
 export default function List() {
     return (
         <View style={styles.container}>
-            <Text>Lista de Livros</Text>
+            <BookList />
         </View>
     )
 }
