@@ -1,37 +1,40 @@
 import React from "react";
-import {Text, StyleSheet, TouchableOpacity, View } from "react-native";
-import { NavigationState, NavigationProp } from "@react-navigation/native";
+import { Text, StyleSheet, TouchableOpacity, View } from "react-native";
+import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 
-interface Props {
-    state: NavigationState;
-    navigation: NavigationProp<any>;
-}
-
-const NavigatorTabBar: React.FC<Props> = ({state, navigation}) => {
+const NavigatorTabBar: React.FC<BottomTabBarProps> = ({ state, navigation }) => {
     return (
-
-        <View style={style.TabArea}>
-
-            <TouchableOpacity>
-                <Text>Esquerda</Text>
-            </TouchableOpacity>
-            <TouchableOpacity>
-                <Text>Centro</Text>
-            </TouchableOpacity>
-            <TouchableOpacity>
-                <Text>Direita</Text>
-            </TouchableOpacity>
-
+        <View style={styles.TabArea}>
+            {state.routes.map((route, index) => (
+                <TouchableOpacity
+                    key={route.key}
+                    onPress={() => navigation.navigate(route.name)}
+                    style={[
+                        styles.tab,
+                        state.index === index ? styles.activeTab : null,
+                    ]}
+                >
+                    <Text>{route.name}</Text>
+                </TouchableOpacity>
+            ))}
         </View>
     );
-}
+};
 
-const style = StyleSheet.create({
-    TabArea:{
-        flexDirection: 'row',
-
+const styles = StyleSheet.create({
+    TabArea: {
+        flexDirection: "row",
+        justifyContent: "space-around",
+        backgroundColor: "#ddd",
+        padding: 10,
     },
-
+    tab: {
+        padding: 10,
+    },
+    activeTab: {
+        borderBottomWidth: 2,
+        borderBottomColor: "blue",
+    },
 });
 
 export default NavigatorTabBar;
