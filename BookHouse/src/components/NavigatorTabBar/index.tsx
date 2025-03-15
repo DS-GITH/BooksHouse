@@ -1,5 +1,5 @@
 import React from "react";
-import {Text} from "react-native";
+import {Text, StyleSheet, TouchableOpacity, View } from "react-native";
 import { NavigationState, NavigationProp } from "@react-navigation/native";
 
 interface Props {
@@ -9,10 +9,29 @@ interface Props {
 
 const NavigatorTabBar: React.FC<Props> = ({state, navigation}) => {
     return (
-        <Text>
 
-        </Text>
+        <View style={style.TabArea}>
+
+            <TouchableOpacity>
+                <Text>Esquerda</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+                <Text>Centro</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+                <Text>Direita</Text>
+            </TouchableOpacity>
+
+        </View>
     );
 }
+
+const style = StyleSheet.create({
+    TabArea:{
+        flexDirection: 'row',
+
+    },
+
+});
 
 export default NavigatorTabBar;
