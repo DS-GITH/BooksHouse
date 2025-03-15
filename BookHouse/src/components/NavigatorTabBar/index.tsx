@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     TabArea: {
         flexDirection: "row",
         justifyContent: "space-around",
-        backgroundColor: "#ddd",
+        backgroundColor: "#77BCA4",
         padding: 10,
     },
     tab: {
