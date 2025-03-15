@@ -6,7 +6,7 @@ const Tab = createBottomTabNavigator();
 
 export default function BottomRoutes() { 
     return (
-        <Tab.Navigator initialRouteName="Login" screenOptions={{headerShown:false,} }>
+        <Tab.Navigator >
             <Tab.Screen name="List" component={List} />
             <Tab.Screen name="User" component={User} />
 
