@@ -1,7 +1,7 @@
 import react from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-export default function Pesquisa() {
+export default function Inventory() {
     return (
         <View style={styles.container}>
             <Text>Pesquisar</Text>

@@ -11,11 +11,11 @@ const NavigatorTabBar: React.FC<BottomTabBarProps> = ({ state, navigation }) => 
             {state.routes.map((route, index) => {
                const icons: Record<string, keyof typeof MaterialIcons.glyphMap> = {
                 Livros: "menu-book",
-                Pesquisa: "search",
+                Inventory: "backpack",
                 Usuário: "person",
             };
 
-                    const isMiddle = route.name === "Pesquisa"; // Detecta a aba do meio
+                    const isMiddle = route.name === "Inventory"; // Detecta a aba do meio
 
                     return (
                         <TabButton 
@@ -58,6 +58,7 @@ const NavigatorTabBar: React.FC<BottomTabBarProps> = ({ state, navigation }) => 
         },
         middleButtonWrapper: {
             flex: 1,
+
         },
     });
 

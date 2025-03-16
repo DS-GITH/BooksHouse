@@ -1,8 +1,8 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import List from '../pages/List/List';
 import User from '../pages/User/User';
-import Pesquisa from '../pages/Pesquisa';
 import CustomTabBar from '../components/NavigatorTabBar';
+import Inventory from '../pages/Inventory';
 const Tab = createBottomTabNavigator();
 
 export default function BottomRoutes() {
@@ -17,8 +17,8 @@ export default function BottomRoutes() {
           component={List} 
         />
          <Tab.Screen 
-          name="Pesquisa"
-          component={Pesquisa} 
+          name="Inventory"
+          component={Inventory} 
         />
         <Tab.Screen 
           name="Usuário"

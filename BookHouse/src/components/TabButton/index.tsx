@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
         borderRadius: 12,
     },
     middleButton: {
-        bottom: 25, // Eleva mais para criar um efeito "flutuante"
+        top: -30,
         backgroundColor: "#77BCA4",
         width: 70,
         height: 70,
