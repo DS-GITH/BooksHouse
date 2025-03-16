@@ -1,39 +1,37 @@
 import React from "react";
-import { Text, StyleSheet, TouchableOpacity, View } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
+import TabButton from "../TabButton/index"; // Importando o novo componente
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+
+const icons: Record<string, keyof typeof MaterialIcons.glyphMap> = {
+    Livros: "menu-book",
+    Pesquisa: "search",
+    Usuário: "person",
+};
 
 const NavigatorTabBar: React.FC<BottomTabBarProps> = ({ state, navigation }) => {
     return (
-        <View style={styles.TabArea}>
+        <View style={styles.tabArea}>
             {state.routes.map((route, index) => (
-                <TouchableOpacity
+                <TabButton
                     key={route.key}
+                    icon={icons[route.name] || "help-outline"}
+                    label={route.name}
                     onPress={() => navigation.navigate(route.name)}
-                    style={[
-                        styles.tab,
-                        state.index === index ? styles.activeTab : null,
-                    ]}
-                >
-                    <Text>{route.name}</Text>
-                </TouchableOpacity>
+                    isActive={state.index === index}
+                />
             ))}
         </View>
     );
 };
 
 const styles = StyleSheet.create({
-    TabArea: {
+    tabArea: {
         flexDirection: "row",
-        justifyContent: "space-around",
         backgroundColor: "#77BCA4",
         padding: 10,
-    },
-    tab: {
-        padding: 10,
-    },
-    activeTab: {
-        borderBottomWidth: 2,
-        borderBottomColor: "blue",
+        elevation: 5,
     },
 });
 
