@@ -1,50 +1,46 @@
 import React from "react";
-import { TouchableOpacity, Text, StyleSheet } from "react-native";
+import { TouchableOpacity, StyleSheet, View } from "react-native";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 
 interface TabButtonProps {
     icon: keyof typeof MaterialIcons.glyphMap;
-    label: string;
     onPress: () => void;
     isActive: boolean;
+    isMiddle?: boolean;
 }
 
-const TabButton: React.FC<TabButtonProps> = ({ icon, label, onPress, isActive }) => {
+const TabButton: React.FC<TabButtonProps> = ({ icon, onPress, isActive, isMiddle }) => {
     return (
-        <TouchableOpacity
+        <TouchableOpacity 
+            style={[styles.button, isActive && styles.activeButton, isMiddle && styles.middleButton]} 
             onPress={onPress}
-            style={[styles.button, isActive ? styles.activeButton : null]}
         >
-            <MaterialIcons 
-                name={icon} 
-                size={24} 
-                color={isActive ? "blue" : "black"} 
-            />
-            <Text style={[styles.text, isActive ? styles.activeText : null]}>
-                {label}
-            </Text>
+            <MaterialIcons name={icon} size={isMiddle ? 34 : 28} color="white" />
         </TouchableOpacity>
     );
 };
 
 const styles = StyleSheet.create({
     button: {
+        justifyContent: "center",
         alignItems: "center",
-        paddingVertical: 10,
-        flex: 1,
+        padding: 12,
     },
     activeButton: {
-        borderBottomWidth: 2,
-        borderBottomColor: "blue",
+        backgroundColor: "rgba(255, 255, 255, 0.2)", // Sutil realce no botão ativo
+        borderRadius: 12,
     },
-    text: {
-        fontSize: 12,
-        color: "black",
-        marginTop: 4,
-    },
-    activeText: {
-        color: "blue",
-        fontWeight: "bold",
+    middleButton: {
+        bottom: 25, // Eleva mais para criar um efeito "flutuante"
+        backgroundColor: "#77BCA4",
+        width: 70,
+        height: 70,
+        borderRadius: 35, // Mantém circular
+        elevation: 8, // Sombra mais evidente no Android
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.4,
+        shadowRadius: 4, // Melhor sombra no iOS
     },
 });
 
