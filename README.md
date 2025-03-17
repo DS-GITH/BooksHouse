@@ -21,5 +21,6 @@ Database: PostgreSQL
 **👤 Contributors**
 
 IgorFariasValentim: **Back-End**
-
+andevstudios: **Back-End**
+lucasgabriel-lcl **Front-End**
 DS-GITH: **Front-End**
