@@ -11,8 +11,8 @@ export default function Login() {
 
     const navigation = useNavigation<NavigationProp<any>>();
 
-    const [email, setEmail] = React.useState("");
-    const [password, setPassword] = React.useState("");
+    const [email, setEmail] = React.useState("EmailInseridoDireto");
+    const [password, setPassword] = React.useState("SenhaInseridaDireto");
 
     async function GetLogin() {
         try {
